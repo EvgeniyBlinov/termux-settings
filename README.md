@@ -2,6 +2,14 @@
 
 ## Usage
 
+For init only!
+
+```
+export ACTION=init
+```
+
+For configure
+
 ```
 export SSH_PORT=1082
 ```
