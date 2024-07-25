@@ -11,6 +11,8 @@ curl -o $PREFIX/bin/termux-upgrade-repo https://raw.githubusercontent.com/termux
 chmod +x $PREFIX/bin/termux-upgrade-repo
 termux-upgrade-repo
 
+pkg upgrade -y
+
 pkg install -y \
     openssh
 
