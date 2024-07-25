@@ -24,7 +24,8 @@ if [ "${ACTION}" == "init" ]; then
 fi
 
 pkg install -y \
-    openssh
+    openssh \
+    iproute2
 
 echo "${USER_PASSWORD}" | passwd --stdin ||
     printf "%s\n" "${USER_PASSWORD}" "${USER_PASSWORD}" | passwd
@@ -32,9 +33,10 @@ echo "${USER_PASSWORD}" | passwd --stdin ||
 cat > /data/data/com.termux/files/usr/etc/ssh/sshd_config <<-EOF
 Port ${SSH_PORT}
 PrintMotd no
-PasswordAuthentication no
+PasswordAuthentication yes
 #PubkeyAcceptedKeyTypes +ssh-dss
 Subsystem sftp /data/data/com.termux/files/usr/libexec/sftp-server
 EOF
 
+echo "$(id)"
 nohup sshd >/dev/null 2>&1 &
