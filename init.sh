@@ -6,7 +6,7 @@ ACTION="${ACTION:-configure}"
 SSH_PORT="${SSH_PORT:-1082}"
 USER_PASSWORD="${USER_PASSWORD:-UhbYgv876}"
 
-functon clear {
+function clear {
     echo "Clearing $PREFIX"
     ## https://github.com/termux/termux-app/issues/1703
     export PREFIX=/data/data/com.termux/files/usr
