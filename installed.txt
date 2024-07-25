@@ -1,9 +1,15 @@
 # vim : ft=sh :
+
+ssh-copy-id $phonename
+
+sed 's/^PasswordAuthentication .*$/PasswordAuthentication no/' -i ~/../usr/etc/ssh/sshd_config
+
 pkg install -y \
     which \
     tmux \
     vim \
     mc \
+    git \
     rsync
 
 pkg install -y \
