@@ -1,0 +1,19 @@
+# vim : ft=sh :
+pkg install -y \
+    which \
+    tmux \
+    vim \
+    mc \
+    rsync
+
+pkg install -y \
+    nodejs
+
+
+mkdir -p /data/data/com.termux/files/usr/local/{share,bin}
+
+########################################################################
+git clone https://github.com/EvgeniyBlinov/qrcode /data/data/com.termux/files/usr/local/share/qrcode &&
+cd /data/data/com.termux/files/usr/local/share/qrcode &&
+npm install &&
+ln -s /data/data/com.termux/files/usr/local/share/qrcode/bin/qrcode /data/data/com.termux/files/usr/local/bin/qrcode
