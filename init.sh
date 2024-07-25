@@ -24,7 +24,6 @@ if [ "${ACTION}" == "init" ]; then
 fi
 
 pkg install -y \
-    --only-upgrade \
     openssh
 
 echo "${USER_PASSWORD}" | passwd --stdin ||
