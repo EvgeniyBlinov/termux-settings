@@ -34,7 +34,7 @@ cat > /data/data/com.termux/files/usr/etc/ssh/sshd_config <<-EOF
 Port ${SSH_PORT}
 PrintMotd no
 PasswordAuthentication no
-PubkeyAcceptedKeyTypes +ssh-dss
+#PubkeyAcceptedKeyTypes +ssh-dss
 Subsystem sftp /data/data/com.termux/files/usr/libexec/sftp-server
 EOF
 
