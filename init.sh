@@ -27,7 +27,8 @@ pkg install -y \
     --only-upgrade \
     openssh
 
-echo "${USER_PASSWORD}" | passwd --stdin
+echo "${USER_PASSWORD}" | passwd --stdin ||
+    printf "%s\n" "${USER_PASSWORD}" "${USER_PASSWORD}" | passwd
 
 cat > /data/data/com.termux/files/usr/etc/ssh/sshd_config <<-EOF
 Port ${SSH_PORT}
