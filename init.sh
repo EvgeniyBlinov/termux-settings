@@ -7,6 +7,8 @@ USER_PASSWORD="${USER_PASSWORD:-UhbYgv876}"
 export PREFIX=/data/data/com.termux/files/usr
 export LD_LIBRARY_PATH=$PREFIX/lib
 export PATH=$PREFIX/bin
+curl -o $PREFIX/bin/termux-upgrade-repo https://raw.githubusercontent.com/termux/termux-packages/android-5/packages/termux-tools/termux-upgrade-repo
+chmod +x $PREFIX/bin/termux-upgrade-repo
 termux-upgrade-repo
 
 pkg install -y \
