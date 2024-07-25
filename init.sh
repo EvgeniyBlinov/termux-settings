@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-ACTION="${1:-configure}"
+ACTION="${ACTION:-configure}"
+[ -n "$1" ] && [ "x$1" == "xinit" ] && ACTION='init'
 
 SSH_PORT="${SSH_PORT:-1082}"
 USER_PASSWORD="${USER_PASSWORD:-UhbYgv876}"
